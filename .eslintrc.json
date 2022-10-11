@@ -1,0 +1,36 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "eol-last": 2,
+    "import/extensions": 2,
+    "indent": [2, 2, {
+      "SwitchCase": 1
+    }],
+    "jsx-quotes": 2,
+    "max-len": [2, {
+      "code": 120,
+      "ignoreStrings": true
+    }],
+    "max-lines": [0, {
+      "max": 300,
+      "skipBlankLines": true,
+      "skipComments": true
+    }],
+    "no-console": 2,
+    "no-debugger": 2,
+    "no-nested-ternary": 2,
+    "no-trailing-spaces": 2,
+    "no-var": 2,
+    "object-curly-spacing": [2, "always", {
+      "arraysInObjects": false
+    }],
+    "quotes": [2, "single", {
+      "allowTemplateLiterals": true
+    }],
+    "semi": [2, "always"],
+    "sort-keys": [0, "asc", {
+      "caseSensitive": false,
+      "natural": false
+    }]
+  }
+}
