@@ -10,15 +10,16 @@ import { Box,
   Toolbar,
   Select,
   MenuItem, } from '@mui/material';
-import { grey } from '@mui/material/colors';
+import BorderedBottom from '../../Wrapper/BorderedBottom';
 
 const Header = () => {
   return (
-    <Box sx={{ borderBottom: `8px solid ${grey[900]}` }}>
+    <BorderedBottom>
       <AppBar
         sx={{
           backgroundColor: 'transparent',
-          padding: '25px 20px'
+          padding: '25px 20px',
+          position: 'absolute'
         }}
         elevation={0}
       >
@@ -142,7 +143,7 @@ const Header = () => {
           </Grid>
         </Container>
       </Box>
-    </Box>
+    </BorderedBottom>
   );
 };
 
