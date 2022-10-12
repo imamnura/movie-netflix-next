@@ -2,7 +2,8 @@ import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { grey } from '@mui/material/colors';
 
-const BorderedBottom = styled(Box)(() => ({
+const BorderedBottom = styled(Box)(({ theme }) => ({
+  backgroundColor: theme.palette.common.black,
   borderBottom: `8px solid ${grey[900]}`
 }));
 
