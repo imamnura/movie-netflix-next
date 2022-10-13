@@ -15,10 +15,23 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: 'rgb(0,0,0.5,0.9)',
+  bgcolor: 'rgb(0,0,0,.75)',
   border: '2px solid #000',
+  borderRadius: '5px',
+  color: 'common.white',
   boxShadow: 24,
   p: 4,
+};
+
+const styleInput = {
+  backgroundColor: '#333',
+  '& .MuiFormLabel-root.MuiInputLabel-root': {
+    color: '#8c8c8c'
+  },
+  '& .MuiInputBase-root.MuiFilledInput-root': {
+    color: 'common.white',
+    backgroundColor: '#333',
+  }
 };
 
 const LoginModal = ({ isOpenModal, closeModal }) => {
@@ -37,34 +50,38 @@ const LoginModal = ({ isOpenModal, closeModal }) => {
         <form>
           <FormControl sx={{ mb:2 }} fullWidth>
             <TextField
-              id="email"
-              name="email"
+              id="emailNetflix"
+              name="emailNetflix"
               label="Email or phone number"
               variant="filled"
               autoComplete="off"
-              defaultValue=""
+              sx={styleInput}
             />
-            <FormHelperText>Your password must contain between 4 and 60 characters.</FormHelperText>
+            <FormHelperText sx={{ color: 'primary.main', mx: 0 }}>
+              Your password must contain between 4 and 60 characters.
+            </FormHelperText>
           </FormControl>
 
           <FormControl sx={{ mb:4 }} fullWidth>
             <TextField
-              id="password"
-              name="password"
+              id="passwordNetflix"
+              name="passwordNetflix"
               type={ showPass ? 'text' : 'password'}
               label="Password"
               variant="filled"
               autoComplete="off"
-              defaultValue=""
-              inputProps={{
+              sx={styleInput}
+              InputProps={{
                 endAdornment: (
-                  <InputAdornment>
+                  <InputAdornment position="end">
                     <Button onClick={() => setShowPass(!showPass)}>{showPass ? 'Hide': 'Show'}</Button>
                   </InputAdornment>
                 )
               }}
             />
-            <FormHelperText>Your password must contain between 4 and 60 characters.</FormHelperText>
+            <FormHelperText sx={{ color: 'primary.main', mx: 0 }}>
+              Your password must contain between 4 and 60 characters.
+            </FormHelperText>
           </FormControl>
 
           <Button size="large" type="submit" variant="contained" fullWidth>Sign in</Button>
