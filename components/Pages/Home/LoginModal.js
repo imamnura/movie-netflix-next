@@ -7,7 +7,10 @@ import {
   Button,
   FormHelperText,
   FormControl,
-  InputAdornment, } from '@mui/material';
+  InputAdornment,
+  Grid,
+  Checkbox } from '@mui/material';
+import { grey, blue } from '@mui/material/colors';
 
 const style = {
   position: 'absolute',
@@ -85,6 +88,45 @@ const LoginModal = ({ isOpenModal, closeModal }) => {
           </FormControl>
 
           <Button size="large" type="submit" variant="contained" fullWidth>Sign in</Button>
+          <Grid container alignItems="center" justifyContent="space-between">
+            <Box>
+              <Checkbox sx={{ color:'common.white', py: 1, px: 0 }}/>
+              <Typography variant="caption" sx={{ color: `${grey[400]}` }}>Remember me</Typography>
+            </Box>
+            <Typography
+              variant="caption"
+              component="a"
+              href="#"
+              sx={{ color: `${grey[400]}`, '&:hover': { textDecoration: 'underline' } }}>
+              Need help?
+            </Typography>
+          </Grid>
+
+          <Box sx={{ display: 'flex', alignItems: 'center', py: 2 }}>
+            <Typography variant="body1" sx={{ color: `${grey[400]}` }}>New to Netflix?</Typography>
+            <Typography
+              variant="body1"
+              component="a"
+              href="#"
+              sx={{ ml: 1, '&:hover': { textDecoration: 'underline' } }}>
+              Sign up now
+            </Typography>
+          </Box>
+          <Box sx={{ display: 'block', alignItems: 'center', py: 3 }}>
+            <Typography
+              variant="caption"
+              sx={{ color: `${grey[400]}`, lineHeight: 0 }}
+            >
+            This page is protected by Google reCAPTCHA to ensure you&apos;re not a bot.
+            </Typography>
+            <Typography
+              variant="caption"
+              component="a"
+              href="#"
+              sx={{ ml: 1, '&:hover': { textDecoration: 'underline' }, color: `${blue[400]}` }}>
+            Learn more
+            </Typography>
+          </Box>
         </form>
       </Box>
     </Modal>
